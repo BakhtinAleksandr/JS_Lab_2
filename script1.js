@@ -7,80 +7,26 @@
 var tds = document.querySelectorAll('td');
 
 //Выполнение первого задания
-document.querySelector('#button1').onclick = () =>{
-  let text = document.querySelector('#first1');
-  if (text.value !== ''){
-    tds[4].innerHTML = text.value;
+button1.addEventListener('click', function(){
+  let name = "elem1";
+  count = 1;
+  for (var i = 4; i < tds.length; i++) {
+    let text = document.getElementById(name);
+    if (text.value !== ''){
+      tds[i].innerHTML = text.value;
+      name = name.substring(0,name.length - 1);
+      count += 1;
+      name += count;
+    }
+    else {
+      alert('Заполните все поля');
+      break;
+    }
   }
-  else {
-    alert('Заполните поле для первого блюда');
-  }
-}
-document.querySelector('#button2').onclick = () =>{
-  let text = document.querySelector('#second1');
-  if (text.value !== ''){
-    tds[5].innerHTML = text.value;
-  }
-  else {
-    alert('Заполните поле для второго блюда');
-  }
-}
-document.querySelector('#button3').onclick = () =>{
-  let text = document.querySelector('#des1');
-  if (text.value !== ''){
-    tds[6].innerHTML = text.value;
-  }
-  else {
-    alert('Заполните поле для десерта');
-  }
-}
-document.querySelector('#button4').onclick = () =>{
-  let text = document.querySelector('#drink1');
-  if (text.value !== ''){
-    tds[7].innerHTML = text.value;
-  }
-  else {
-    alert('Заполните поле для напитка');
-  }
-}
-document.querySelector('#button5').onclick = () =>{
-  let text = document.querySelector('#first2');
-  if (text.value !== ''){
-    tds[8].innerHTML = text.value;
-  }
-  else {
-    alert('Заполните второе поле для первого блюда');
-  }
-}
-document.querySelector('#button6').onclick = () =>{
-  let text = document.querySelector('#second2');
-  if (text.value !== ''){
-    tds[9].innerHTML = text.value;
-  }
-  else {
-    alert('Заполните второе поле для второго блюда');
-  }
-}
-document.querySelector('#button7').onclick = () =>{
-  let text = document.querySelector('#des2');
-  if (text.value !== ''){
-    tds[10].innerHTML = text.value;
-  }
-  else {
-    alert('Заполните второе поле для десерта');
-  }
-}
-document.querySelector('#button8').onclick = () =>{
-  let text = document.querySelector('#drink2');
-  if (text.value !== ''){
-    tds[11].innerHTML = text.value;
-  }
-  else {
-    alert('Заполните второе поле для напитка');
-  }
-}
+})
+
 //Выполнение второго задания
-document.querySelector('#field1').onclick = () =>{
+field1.addEventListener('click', function(){
   if((tds[4].innerHTML == "") || (tds[8].innerHTML == "")){
     alert('ячейки пустые');
 }
@@ -94,9 +40,9 @@ document.querySelector('#field1').onclick = () =>{
       }
     }
   }
-}
+})
 
-document.querySelector('#field2').onclick = () =>{
+field2.addEventListener('click', function(){
   if((tds[5].innerHTML == "") || (tds[9].innerHTML == "")){
     alert('ячейки пустые');
 }
@@ -110,9 +56,9 @@ document.querySelector('#field2').onclick = () =>{
       }
     }
   }
-}
+})
 
-document.querySelector('#field3').onclick = () =>{
+field3.addEventListener('click', function(){
   if((tds[6].innerHTML == "") || (tds[10].innerHTML == "")){
     alert('ячейки пустые');
 }
@@ -126,9 +72,9 @@ document.querySelector('#field3').onclick = () =>{
       }
     }
   }
-}
+})
 
-document.querySelector('#field4').onclick = () =>{
+field4.addEventListener('click', function(){
   if((tds[7].innerHTML == "") || (tds[11].innerHTML == "")){
     alert('ячейки пустые');
 }
@@ -142,4 +88,4 @@ document.querySelector('#field4').onclick = () =>{
       }
     }
   }
-}
+})
